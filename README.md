@@ -1,2 +1,2 @@
-# PHSteam
-PHSteam: A PHP-based Web Application for Gamers
+# Mercado Livro
+Mercado Livro: A copy of Mercado Libre using PHP
