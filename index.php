@@ -1,3 +1,17 @@
+<?php 
+    $message;
+    $errors = array();
+
+    if(isset($_GET["error"]))
+    {
+        $message = match ($_GET["error"]) {
+             'nullparams' => 'All fields are required',
+             'invalidInput' => 'Invalid fields. Check it again.',
+             'incorrectField' => 'Invalid E-mail or Password. Check it again'
+        };
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +31,7 @@
             <input type="password" placeholder="Password" name="password" class="drop-shadow-md my-2 p-2 mb-4 rounded bg-slate-100">
 
             <button type="submit" class="p-2 drop-shadow-md rounded bg-blue-600 font-bold text-white w-32" style="margin: 0 auto">LOGIN</button>
-            <?php if($_GET["error"] === "nullparams"): echo "<p class='text-red-500' style='margin: 1rem auto;'>All fields are required</p>"; 
-                elseif($_GET["error"] === "invalidInput"): echo "<p class='text-red-500' style='margin: 1rem auto;'>Invalid fields. Check it again</p>";
-                elseif($_GET["error"] === "incorrectField"): echo "<p class='text-red-500' style='margin: 1rem auto;'>Invalid E-mail or Password. Check it again</p>";
-                endif;
-            ?>
+            <?php if(isset($_GET["error"])): echo "<p class='text-red-500' style='margin: 1rem auto;'>$message</p>"; endif; ?>
 
         </form>
     </main>
