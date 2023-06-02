@@ -1,12 +1,23 @@
-<?php
+<?php namespace Database;
+
+use PDO;
+use PDOException;
 
 class Database
 {
-    private $_user = 'root';
-    private $_password = '';
-    private $_database = 'mercado-livro';
+    /** @var string Server's username */
+    private string $_user = 'root';
 
-    public function connect()
+    /** @var string Server's password */
+    private string $_password = '';
+
+    /** @var string Database's name */
+    private string $_database = 'mercado-livro';
+
+    /**
+     * @return PDO
+     */
+    public function connect(): PDO
     {
         try
         {
@@ -15,17 +26,31 @@ class Database
         }
         catch(PDOException $e)
         {
-            die('Connection Error!');
+            die("
+                <body style='width: 100vw; height: 100vh; text-align: center; padding: 5rem 0'>
+                    <h1 style='margin: 5rem auto;'> Sorry! Connection Error, come back later. </h1>
+                    <p>We're under maintenance.</p>
+                </body>
+            ");
         }
     }
 
-    public function login()
+    /**
+     * @param string user's email
+     * 
+     * @return object|false
+     */
+    public function find_user_by_email(string $email): object|false
     {
-        header("location: ../../public/home.php");
-    }
+        $pdo = $this->connect();
 
-    public function exit()
-    {
+        $stmt = $pdo->prepare("SELECT * from users where email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetchObject();
+
         $pdo = null;
+
+        return $user;
+        
     }
 }

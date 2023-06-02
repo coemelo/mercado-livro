@@ -1,7 +1,26 @@
 {
-    "require-dev": {
-        "pestphp/pest": "^2.6"
+    "name": "coemelo/mercado-livro",
+    "description": "A PHP Mercado Libre clone",
+    "type": "project",
+    "require": {
+        "pestphp/pest": "^2.6",
+        "phpunit/phpunit": "^10.1"
     },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Coemelo\\MercadoLivro\\": "./",
+            "Models\\": "./Model",
+            "Database\\": "./Database",
+            "Validators\\": "./Controller/Auth/Validators"
+        }
+    },
+    "authors": [
+        {
+            "name": "Coemelo",
+            "email": "merlosamuel@protonmail.ch"
+        }
+    ],
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true

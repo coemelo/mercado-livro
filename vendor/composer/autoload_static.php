@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
+class ComposerStaticInit26249f1558d0964b34cbfdbd65eba20c
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -31,6 +31,10 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+        ),
+        'V' => 
+        array (
+            'Validators\\' => 11,
         ),
         'T' => 
         array (
@@ -64,6 +68,10 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
         array (
             'NunoMaduro\\Collision\\' => 21,
         ),
+        'M' => 
+        array (
+            'Models\\' => 7,
+        ),
         'J' => 
         array (
             'Jean85\\' => 7,
@@ -76,6 +84,11 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
         array (
             'Doctrine\\Deprecations\\' => 22,
             'DeepCopy\\' => 9,
+            'Database\\' => 9,
+        ),
+        'C' => 
+        array (
+            'Coemelo\\MercadoLivro\\' => 21,
         ),
     );
 
@@ -83,8 +96,8 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Whoops\\' => 
         array (
@@ -93,6 +106,10 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Validators\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Controller/Auth/Validators',
         ),
         'Termwind\\' => 
         array (
@@ -174,6 +191,10 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
         ),
+        'Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Model',
+        ),
         'Jean85\\' => 
         array (
             0 => __DIR__ . '/..' . '/jean85/pretty-package-versions/src',
@@ -189,6 +210,14 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Database',
+        ),
+        'Coemelo\\MercadoLivro\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
         ),
     );
 
@@ -1316,9 +1345,9 @@ class ComposerStaticInite66f72a88f08109cb2dd2e8af703554b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite66f72a88f08109cb2dd2e8af703554b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite66f72a88f08109cb2dd2e8af703554b::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite66f72a88f08109cb2dd2e8af703554b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit26249f1558d0964b34cbfdbd65eba20c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit26249f1558d0964b34cbfdbd65eba20c::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit26249f1558d0964b34cbfdbd65eba20c::$classMap;
 
         }, null, ClassLoader::class);
     }
